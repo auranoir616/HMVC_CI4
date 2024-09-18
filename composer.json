@@ -1,0 +1,14 @@
+{
+    "name": "noir/hmvc-ci4",
+    "description": "hmvcCI4",
+    "require": {
+        "benedmunds/codeigniter-ion-auth": "4.x-dev"
+    },
+    "minimum-stability": "dev",
+    "repositories": {
+        "ionAuth": {
+            "type": "vcs",
+            "url": "git@github.com:benedmunds/CodeIgniter-Ion-Auth.git"
+        }
+    }
+}
