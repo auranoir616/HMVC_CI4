@@ -1,4 +1,4 @@
-<div class="modal fade" id="dinamicModals" tabindex="-1" role="dialog" aria-hidden="true">
+<!-- <div class="modal fade" id="dinamicModals" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -10,7 +10,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="modal fade" id="dinamicModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="dinamicModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -48,11 +48,11 @@
         $(document).ready(function() {
             $('.select2-single').select2();
         });
-        $("#dinamicModals").on("show.bs.modal", function(e) {
-            var link = $(e.relatedTarget);
-            $(this).find(".modal-body").load(link.attr("data-bs-href"));
-            $(this).find("#myModalLabel").text(link.attr("data-bs-title"));
-        });
+        // $("#dinamicModals").on("show.bs.modal", function(e) {
+        //     var link = $(e.relatedTarget);
+        //     $(this).find(".modal-body").load(link.attr("data-bs-href"));
+        //     $(this).find("#myModalLabel").text(link.attr("data-bs-title"));
+        // });
         $("#dinamicModal").on("show.bs.modal", function(e) {
             var link = $(e.relatedTarget);
             $(this).find(".modal-body").load(link.attr("data-bs-href"));

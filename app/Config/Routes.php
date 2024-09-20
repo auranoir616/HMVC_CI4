@@ -18,6 +18,10 @@ $routes->group('postdata', ["namespace" => "Modules\Postdata\Controllers"], func
     $routes->post('user_post/(:segment)/(:segment)', 'Postdata::user_post/$1/$2');
 });
 
+$routes->group('modal', ['namespace' => 'Modules\Modal\Controllers'], function($routes) {
+    $routes->get('admin/(:any)', 'Modal::admin/$1');
+    $routes->get('member/(:any)', 'Modal::member/$1');
+});
 $routes->group('cronjob', ['namespace' => 'Modules\Cronjob\Controllers'], function($routes) {
     $routes->get('start_bonus_royalti', 'Cronjob::bonus_royalti');
 });
