@@ -38,7 +38,6 @@ class Auth extends Model
             'authentication_id' => 'required',
             'authentication_password' => 'required',
         ]);
-
         if (!$this->validation->withRequest($request)->run()) {
             self::$data['status']  = false;
             self::$data['message'] = implode('<br/>', $this->validation->getErrors());
@@ -52,10 +51,9 @@ class Auth extends Model
 
             if (self::$data['status']) {
                 // Ambil grup user
-                $user_group = $this->ionAuth->getUsersGroups()->getRow();
+                $user_group = UsersGroups();
 
                 if ($user_group && $user_group->name === 'admin') {
-                    // Set session admin
                     $session->set('admin_userid', $this->ionAuth->user()->row()->id);
                 }
 

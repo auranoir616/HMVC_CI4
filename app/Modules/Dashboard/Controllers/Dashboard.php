@@ -26,6 +26,9 @@ class Dashboard extends BaseController
         if (!$this->ionAuth->loggedIn()) {
             return redirect()->to('/login');
         }
+        // if(!$this->ionAuth->isAdmin()){
+        //     return redirect()->to('/dashboard');
+        // }
         $viewPath = "Modules\\Dashboard\\Views\\pages\\dashboard";
         $data = [];
 
@@ -37,11 +40,17 @@ public function view_page($page = 'dashboard')
     if (!$this->ionAuth->loggedIn()) {
         return redirect()->to('/login');
     }
+    // if(!$this->ionAuth->isAdmin()){
+    //     return redirect()->to('/dashboard');
+    // }
+
     $viewPath = "Modules\\Dashboard\\Views\\pages\\" . $page;
     try {
         $data = [
+            "data_group" => $this->ionAuth->getUsersGroups()->getRow(),
             "title" => ucfirst($page),
-            "content" => view($viewPath)
+            "islogin" => $this->ionAuth->loggedIn(),
+            'greeting' => 'Hello, welcome to the home page!',
         ];
     } catch (\Exception $e) {
         throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();

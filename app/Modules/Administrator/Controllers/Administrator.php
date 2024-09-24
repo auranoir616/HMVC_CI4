@@ -27,6 +27,10 @@ class Administrator extends Controller
         if (!$this->ionAuth->loggedIn()) {
             return redirect()->to('/login');
         }
+        if(!$this->ionAuth->isAdmin()){
+            return redirect()->to('/dashboard');
+        }
+
         $viewPath = "Modules\\Administrator\\Views\\" . $filename;
         $data = [
             "data_group" => $this->ionAuth->getUsersGroups()->getRow(),

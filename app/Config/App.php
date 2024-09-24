@@ -199,4 +199,13 @@ class App extends BaseConfig
      * @see http://www.w3.org/TR/CSP/
      */
     public bool $CSPEnabled = false;
+
+        public $sessionDriver = 'CodeIgniter\Session\Handlers\FileHandler'; // Can be 'files', 'database', 'redis', etc.
+        public $sessionCookieName = 'app_';
+        public $sessionExpiration = 7200;
+        public $sessionSavePath = WRITEPATH . 'session';
+        public $sessionMatchIP = false;
+        public $sessionTimeToUpdate = 300;
+        public $sessionRegenerateDestroy = false;
+
 }

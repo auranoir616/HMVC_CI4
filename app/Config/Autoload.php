@@ -44,7 +44,7 @@ class Autoload extends AutoloadConfig
         'IonAuth' => ROOTPATH . 'CodeIgniter-Ion-Auth',
         'Modules'     => APPPATH . 'Modules',
         'Libraries' => APPPATH . 'Libraries/',
-        ];
+    ];
 
     /**
      * -------------------------------------------------------------------
@@ -93,5 +93,5 @@ class Autoload extends AutoloadConfig
      *
      * @var list<string>
      */
-    public $helpers = ['site_helper'];
+    public $helpers = ['site_helper', 'ionAuth_helper'];
 }
