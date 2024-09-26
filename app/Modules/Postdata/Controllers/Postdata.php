@@ -41,6 +41,7 @@ class Postdata extends BaseController
 
     public function admin_post($model, $method)
     {
+
         $model = ucfirst(preg_replace('/[^a-zA-Z0-9_]/', '', $model));
         $method = preg_replace('/[^a-zA-Z0-9_]/', '', $method);
 
@@ -72,4 +73,34 @@ class Postdata extends BaseController
 
         return $this->response->setJSON($result);
     }
+    public function user_post($model, $method)
+    {
+        $model = ucfirst(preg_replace('/[^a-zA-Z0-9_]/', '', $model));
+        $method = preg_replace('/[^a-zA-Z0-9_]/', '', $method);
+
+        $modelName = '\\Modules\\Postdata\\Models\\User_post\\' . $model;
+
+        if (!class_exists($modelName)) {
+            return $this->response->setJSON([
+                'error' => 'Model tidak ditemukan',
+                'nama' => $modelName,
+                'tes' => class_exists($modelName)
+            ], 404);
+        }
+
+        $modelInstance = new $modelName();
+
+        if (!method_exists($modelInstance, $method)) {
+            return $this->response->setJSON([
+                'error' => 'Method tidak ditemukan',
+                'nama' => $modelInstance,
+            ], 404);
+        }
+
+        $requestData = $this->request->getPost();
+        $result = call_user_func_array([$modelInstance, $method], [$requestData]);
+
+        return $this->response->setJSON($result);
+    }
+
 }
