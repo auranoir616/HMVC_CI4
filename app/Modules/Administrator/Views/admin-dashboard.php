@@ -1,5 +1,5 @@
+<?php $template->setTitle('Dashboard admin'); ?>
 <h1>admin dashboard</h1>
-<?= $greeting; ?>
 <?= $islogin; ?>
 <?php 
 $user = userdata();

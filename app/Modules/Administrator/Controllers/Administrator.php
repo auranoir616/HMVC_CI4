@@ -16,13 +16,11 @@ class Administrator extends Controller
         $this->session = \Config\Services::session();
         $this->ionAuth = new IonAuth(); 
         $this->template = new Template();
-
-        // if (!$this->ionAuth->loggedIn()) {
-        //     return redirect()->to('/login');
-        // }
+        // $data['csrf_token_name'] = csrf_token();
+        // $data['csrf_hash'] = csrf_hash();
     }
 
-    public function index($filename = 'admin-page')
+    public function index($filename = 'admin-dashboard')
     {
         if (!$this->ionAuth->loggedIn()) {
             return redirect()->to('/login');
@@ -33,10 +31,10 @@ class Administrator extends Controller
 
         $viewPath = "Modules\\Administrator\\Views\\" . $filename;
         $data = [
+            "template" => $this->template,
+            "title" =>  $this->template->getTitle(),
             "data_group" => $this->ionAuth->getUsersGroups()->getRow(),
-            "title" => ucfirst($filename),
             "islogin" => $this->ionAuth->loggedIn(),
-            'greeting' => 'Hello, welcome to the home page!',
         ];
       return $this->template->render($viewPath, $data);
           }

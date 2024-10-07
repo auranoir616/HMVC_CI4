@@ -1,11 +1,11 @@
 <?php 
-namespace Modules\Postdata\Models\Public_post;
+namespace Modules\Postdata\Models\Admin_post;
 
 use CodeIgniter\Model;
 use IonAuth\Libraries\IonAuth;
 use IonAuth\Models\IonAuthModel;
 
-class Auth extends Model
+class Adminpost extends Model
 {
     private static $data = [
         'status'  => true,
@@ -30,8 +30,8 @@ class Auth extends Model
 
     }
 
-    function adddata(){
-        
+    function addData(){
+
     }
 
 }

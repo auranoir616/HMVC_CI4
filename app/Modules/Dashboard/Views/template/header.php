@@ -8,7 +8,7 @@
     <meta name="description" content="-">
     <meta name="theme-color" content="#f9ca24">
     <meta name="google" content="notranslate" />
-    <title><?php echo $title ?></title>
+    <title><?php echo $template->getTitle(); ?></title>
     <link rel="shortcut icon" href="assets/logokecil.png" type="image/x-icon">
     <link href="<?php echo base_url('assets/backend/plugins/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet" id="style" />
     <link href="<?php echo base_url('assets/backend/css/style.css') ?>" rel="stylesheet" />
@@ -279,7 +279,7 @@
                                 [
                                     'title' => 'Dashboard',
                                     'icon' => 'fa fa-home',
-                                    'url' => 'admin/dashboard-admin',
+                                    'url' => 'admin/admin-dashboard',
                                     'submenu' => false,
                                 ],
                                 [
@@ -425,6 +425,6 @@
                             </script>
                         <?php endif ?>
                         <div class="page-header">
-                            <h1 class="page-title"><?php echo $title ?></h1>
+                            <h1 class="page-title"><?php echo $template->getTitle(); ?></h1>
                         </div>
 

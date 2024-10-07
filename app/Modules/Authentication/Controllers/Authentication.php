@@ -37,7 +37,7 @@ class Authentication extends BaseController
         'islogin' => $this->ionAuth->loggedIn(),
         'greeting' => 'Hello, welcome to the home page!',
     ];
-        return $this->template->renderAuth($viewPath, $data);
+        return $this->template->render($viewPath, $data);
     }
     
     public function register($page = 'signup')
@@ -58,7 +58,7 @@ class Authentication extends BaseController
             "islogin" => $this->ionAuth->loggedIn()
 
         ];
-        return $this->template->renderAuth($viewPath, $data);
+        return $this->template->render($viewPath, $data);
     }
 
     public function logout()

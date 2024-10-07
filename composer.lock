@@ -139,12 +139,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-escaper.git",
-                "reference": "1945621681a2eb9b8a539e49b8472bb012e6b202"
+                "reference": "0c802adc844884ff35631cfffdc239607131c5d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-escaper/zipball/1945621681a2eb9b8a539e49b8472bb012e6b202",
-                "reference": "1945621681a2eb9b8a539e49b8472bb012e6b202",
+                "url": "https://api.github.com/repos/laminas/laminas-escaper/zipball/0c802adc844884ff35631cfffdc239607131c5d4",
+                "reference": "0c802adc844884ff35631cfffdc239607131c5d4",
                 "shasum": ""
             },
             "require": {
@@ -194,7 +194,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2024-09-09T00:51:59+00:00"
+            "time": "2024-10-07T00:57:04+00:00"
         },
         {
             "name": "psr/log",

@@ -3,16 +3,35 @@ namespace App\Libraries;
 
 class Template
 {
+    protected $title = '';
+    
+
     public function render($view, $data = [])
     {
-        echo view('Modules\\Dashboard\\Views\\template\\header', $data);
+        ob_start();
         echo view($view, $data);
+        $content = ob_get_clean();
+        // $data['title'] = $this->getTitle();
+        echo view('Modules\\Dashboard\\Views\\template\\header', $data);
+        echo  $content;
         echo view('Modules\\Dashboard\\Views\\template\\footer', $data);
     }
-    public function renderAuth($view, $data = [])
+
+    public function setTitle($title)
     {
-        echo view('Modules\\Authentication\\Views\\template\\header', $data);
-        echo view($view, $data);
-        echo view('Modules\\Authentication\\Views\\template\\footer', $data);
+        $this->title = $title;
     }
+
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
 }
+    // public function renderAuth($view, $data = [])
+    // {
+    //     echo view('Modules\\Authentication\\Views\\template\\header', $data);
+    //     echo view($view, $data);
+    //     echo view('Modules\\Authentication\\Views\\template\\footer', $data);
+    // }
+
