@@ -46,7 +46,7 @@ class Modal extends BaseController
             throw new \CodeIgniter\Exceptions\PageNotFoundException($viewPath); // throw 404 exception
         }
     
-        return  view($viewPath); // load view with updated view() helper in CI4
+        return view($viewPath); // load view with updated view() helper in CI4
     }
 
 }

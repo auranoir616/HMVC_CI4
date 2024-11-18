@@ -5,14 +5,19 @@ Produk
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
+<div class="card">
 <div class="mb-3">
+</div>
+    <div class="card-header">
+        <h3 class="card-title">Produk</h3>
+        <a data-bs-href="<?php echo site_url('produk/modal/add-produk') ?>" data-bs-title="Tambah Produk" data-bs-remote="false" data-bs-toggle="modal" data-bs-target="#dinamicModal" data-bs-backdrop="static" data-bs-keyboard="false" title="Tambah Produk" class="btn btn-md btn-custom text-white btn-block">
+        Tambah Produk
+    </a>
+    <a href="<?php echo site_url('produk/modal/add-produk') ?>">asdasda</a>
     <a data-bs-href="<?php echo site_url('modal/admin/add-produk') ?>" data-bs-title="Tambah Produk" data-bs-remote="false" data-bs-toggle="modal" data-bs-target="#dinamicModal" data-bs-backdrop="static" data-bs-keyboard="false" title="Tambah Produk" class="btn btn-md btn-custom text-white btn-block">
         Tambah Produk
     </a>
-</div>
-<div class="card">
-    <div class="card-header">
-        <h3 class="card-title">Produk</h3>
+
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -42,7 +47,7 @@ Produk
                                 </a>
                             </td>
                             <td>
-                                <a href="#" data-bs-href="<?php echo site_url('modal/admin/edit-produk?code=' . $item->produk_code) ?>" data-bs-title="UPDATE DATA PRODUK" data-bs-remote="false" data-bs-toggle="modal" data-bs-target="#dinamicModal" data-bs-backdrop="static" data-bs-keyboard="false" class="btn btn-primary text-white mb-1">
+                                <a href="#" data-bs-href="<?php echo site_url('produk/modal/edit-produk?code=' . $item->produk_code) ?>" data-bs-title="UPDATE DATA PRODUK" data-bs-remote="false" data-bs-toggle="modal" data-bs-target="#dinamicModal" data-bs-backdrop="static" data-bs-keyboard="false" class="btn btn-primary text-white mb-1">
                                     Update
                                 </a>
                                 <a href="javascript:void(0)" onclick="deleteProduk('<?php echo $item->produk_code ?>')" class="btn  btn-danger text-white mb-1">Hapus</a>

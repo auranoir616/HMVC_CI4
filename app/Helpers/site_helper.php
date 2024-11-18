@@ -277,4 +277,26 @@ if (!function_exists('db')) {
     }
 
 } 
+if (!function_exists('ucapan')) {
+    /**
+     * Generate the closing form tag.
+     *
+     * @return string
+     */
+    function ucapan() {
+        $hour = date('H');
+        // Tentukan ucapan berdasarkan waktu
+        if ($hour >= 5 && $hour < 12) {
+            return "Selamat Pagi";
+        } elseif ($hour >= 12 && $hour < 15) {
+            return "Selamat Siang";
+        } elseif ($hour >= 15 && $hour < 18) {
+            return "Selamat Sore";
+        } else {
+            return "Selamat Malam";
+        }
+    }
+    
+
+} 
 }

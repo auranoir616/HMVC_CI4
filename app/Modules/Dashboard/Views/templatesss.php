@@ -8,7 +8,7 @@
     <meta name="description" content="-">
     <meta name="theme-color" content="#f9ca24">
     <meta name="google" content="notranslate" />
-    <title><?php echo $template->getTitle(); ?></title>
+    <title><?= $this->renderSection('title') ?></title>
     <link rel="shortcut icon" href="assets/logokecil.png" type="image/x-icon">
     <link href="<?php echo base_url('assets/backend/plugins/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet" id="style" />
     <link href="<?php echo base_url('assets/backend/css/style.css') ?>" rel="stylesheet" />
@@ -144,44 +144,6 @@
     // modal akun baru menunggu varifikasi
     $userdata = userdata();
     ?>
-        <!-- <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="resellerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content ">
-                    <div class="modal-header d-flex justify-content-center flex-column align-items-center">
-                        <div class="modal-title alert alert-warning d-flex align-items-center text-danger" role="alert">
-                            <i class="ti-alert fs-40 me-3"></i>
-                            <div class="fs-15">
-                                Selamat datang <br>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="modal-body">
-                        Anda Mendaftar sebagai <b></b>, silahkan melakukan Transaksi Pertama dengan pembelian min. 50 pcs untuk <b>Mendapatkan Bonus Insentif</b>.
-                    </div>
-                    <div class="modal-footer p-1">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script>
-            $(document).ready(function() {
-                // Check if the modal has been shown before in this session
-                // if (sessionStorage.getItem('modalShown')) {
-                var resellerModal = new bootstrap.Modal(document.getElementById('resellerModal'), {
-                    keyboard: false
-                });
-                resellerModal.show();
-                // }
-
-                // Set sessionStorage when the modal is closed
-                $('#resellerModal').on('hidden.bs.modal', function() {
-                    sessionStorage.setItem('modalShown', 'true');
-                });
-            });
-        </script> -->
-
 
 
     <div class="page">
@@ -269,106 +231,106 @@
                             </svg>
                         </div>
                         <?php
-                $uri = service('uri');
-                $userGroup = UsersGroups();
-                if ($userGroup->id == 1) {
-                    $array_menu = [
-                        [
-                            'heading' => 'DASHBOARD',
-                            'data' => [
+                        $uri = service('uri');
+                        $userGroup = UsersGroups();
+                        if ($userGroup->id == 1) {
+                            $array_menu = [
                                 [
-                                    'title' => 'Dashboard',
-                                    'icon' => 'fa fa-home',
-                                    'url' => 'admin/admin-dashboard',
-                                    'submenu' => false,
-                                ],
-                                [
-                                    'title' => 'Produk & Stok',
-                                    'icon' => 'fa fa-folder',
-                                    'url' => 'admin/produk',
-                                    'submenu' => false,
-                                ],
-                                [
-                                    'title' => 'Registrasi',
-                                    'icon' => 'fa fa-user-plus',
-                                    'url' => 'admin/registrasi',
-                                    'submenu' => false,
-                                ],
-                                [
-                                    'title' => 'Belanja',
-                                    'icon' => 'fa fa-cart-plus',
-                                    'url' => 'admin/laporan-penjualan',
-                                    'submenu' => [
-                                        ['title' => 'Penjualan produk', 'url' => 'admin/laporan-penjualan'],
-                                        ['title' => 'Penjualan ID CARD', 'url' => 'admin/penjualan-idcard'],
-                                        ['title' => 'Pengiriman Stok', 'url' => 'admin/pengiriman-stok'],
+                                    'heading' => 'DASHBOARD',
+                                    'data' => [
+                                        [
+                                            'title' => 'Dashboard',
+                                            'icon' => 'fa fa-home',
+                                            'url' => 'admin/admin-dashboard',
+                                            'submenu' => false,
+                                        ],
+                                        [
+                                            'title' => 'Produk & Stok',
+                                            'icon' => 'fa fa-folder',
+                                            'url' => 'admin/produk',
+                                            'submenu' => false,
+                                        ],
+                                        [
+                                            'title' => 'Registrasi',
+                                            'icon' => 'fa fa-user-plus',
+                                            'url' => 'admin/registrasi',
+                                            'submenu' => false,
+                                        ],
+                                        [
+                                            'title' => 'Belanja',
+                                            'icon' => 'fa fa-cart-plus',
+                                            'url' => 'admin/laporan-penjualan',
+                                            'submenu' => [
+                                                ['title' => 'Penjualan produk', 'url' => 'admin/laporan-penjualan'],
+                                                ['title' => 'Penjualan ID CARD', 'url' => 'admin/penjualan-idcard'],
+                                                ['title' => 'Pengiriman Stok', 'url' => 'admin/pengiriman-stok'],
+                                            ],
+                                        ],
                                     ],
                                 ],
-                            ],
-                        ],
-                    ];
-                } else {
-                    $array_menu = [
-                        [
-                            'heading' => 'DASHBOARD',
-                            'data' => [
+                            ];
+                        } else {
+                            $array_menu = [
                                 [
-                                    'title' => 'Dashboard',
-                                    'icon' => 'ti-home',
-                                    'url' => 'dashboard',
-                                    'submenu' => false,
+                                    'heading' => 'DASHBOARD',
+                                    'data' => [
+                                        [
+                                            'title' => 'Dashboard',
+                                            'icon' => 'ti-home',
+                                            'url' => 'dashboard',
+                                            'submenu' => false,
+                                        ],
+                                        [
+                                            'title' => 'Produk & Stok',
+                                            'icon' => 'fa fa-folder',
+                                            'url' => 'produk',
+                                            'submenu' => false,
+                                        ],
+                                    ],
                                 ],
-                                [
-                                    'title' => 'Produk & Stok',
-                                    'icon' => 'fa fa-folder',
-                                    'url' => 'produk',
-                                    'submenu' => false,
-                                ],
-                            ],
-                        ],
-                    ];
-                }
-                
-                foreach ($array_menu as $menus) : ?>
-                    <ul class="side-menu">
-                        <li class="sub-category">
-                            <h3><?= $menus['heading'] ?></h3>
-                        </li>
-                        <?php foreach ($menus['data'] as $submenu) :
-                            $active = ($uri->getPath() == $submenu['url']) ? 'active' : false;
-                            $activeOpen = false;
-                            $activeStyle = false;
-                
-                            if ($submenu['submenu']) {
-                                $activeSubMenu = array_column($submenu['submenu'], 'url');
-                                if (in_array($uri->getPath(), $activeSubMenu)) {
-                                    $activeOpen = 'open';
-                                    $activeStyle = 'style="display: block;"';
-                                }
-                            }
-                            ?>
-                            <li class="slide <?= $activeOpen ?>">
-                                <a href="<?= site_url($submenu['url']) ?>" class="side-menu__item <?= $active ?>" data-bs-toggle="slide">
-                                    <i class="side-menu__icon <?= $submenu['icon'] ?>"></i>
-                                    <span class="side-menu__label"><?= $submenu['title'] ?></span>
-                                    <?php if ($submenu['submenu']) : ?>
-                                        <i class="angle fe fe-chevron-right"></i>
-                                    <?php endif; ?>
-                                </a>
-                                <?php if ($submenu['submenu']) : ?>
-                                    <ul class="slide-menu" <?= $activeStyle ?> style="background-color: #E21F27;">
-                                        <?php foreach ($submenu['submenu'] as $ngsubmenu) :
-                                            $activeR = ($uri->getPath() == $ngsubmenu['url']) ? 'subactive' : false;
-                                            ?>
-                                            <li><a href="<?= site_url($ngsubmenu['url']) ?>" class="slide-item <?= $activeR ?>"><?= $ngsubmenu['title'] ?></a></li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                <?php endif; ?>
-                            </li>
+                            ];
+                        }
+
+                        foreach ($array_menu as $menus) : ?>
+                            <ul class="side-menu">
+                                <li class="sub-category">
+                                    <h3><?= $menus['heading'] ?></h3>
+                                </li>
+                                <?php foreach ($menus['data'] as $submenu) :
+                                    $active = ($uri->getPath() == $submenu['url']) ? 'active' : false;
+                                    $activeOpen = false;
+                                    $activeStyle = false;
+
+                                    if ($submenu['submenu']) {
+                                        $activeSubMenu = array_column($submenu['submenu'], 'url');
+                                        if (in_array($uri->getPath(), $activeSubMenu)) {
+                                            $activeOpen = 'open';
+                                            $activeStyle = 'style="display: block;"';
+                                        }
+                                    }
+                                ?>
+                                    <li class="slide <?= $activeOpen ?>">
+                                        <a href="<?= site_url($submenu['url']) ?>" class="side-menu__item <?= $active ?>" data-bs-toggle="slide">
+                                            <i class="side-menu__icon <?= $submenu['icon'] ?>"></i>
+                                            <span class="side-menu__label"><?= $submenu['title'] ?></span>
+                                            <?php if ($submenu['submenu']) : ?>
+                                                <i class="angle fe fe-chevron-right"></i>
+                                            <?php endif; ?>
+                                        </a>
+                                        <?php if ($submenu['submenu']) : ?>
+                                            <ul class="slide-menu" <?= $activeStyle ?> style="background-color: #E21F27;">
+                                                <?php foreach ($submenu['submenu'] as $ngsubmenu) :
+                                                    $activeR = ($uri->getPath() == $ngsubmenu['url']) ? 'subactive' : false;
+                                                ?>
+                                                    <li><a href="<?= site_url($ngsubmenu['url']) ?>" class="slide-item <?= $activeR ?>"><?= $ngsubmenu['title'] ?></a></li>
+                                                <?php endforeach; ?>
+                                            </ul>
+                                        <?php endif; ?>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
                         <?php endforeach; ?>
-                    </ul>
-                <?php endforeach; ?>
-                </div>
+                    </div>
                 </div>
             </div>
 
@@ -384,7 +346,7 @@
                 <div class="side-app " style="padding: 1px !important;">
                     <!-- CONTAINER -->
                     <div class="main-container container-fluid ">
-                        
+
                         <?php if (session()->get('admin_userid') && (session()->get('admin_userid') !== userid())) :
                             $getgroups = $this->ionAuth->getUsersGroups(session()->get('admin_userid'))->getRow();
                             echo form_hidden('csrf_cadangan', csrf_hash());
@@ -427,4 +389,96 @@
                         <div class="page-header">
                             <h1 class="page-title"><?php echo $template->getTitle(); ?></h1>
                         </div>
+                        <?= $this->renderSection('content') ?>
 
+
+
+
+                    </div>
+                    <!-- CONTAINER CLOSED -->
+
+                </div>
+            </div>
+            <!--app-content closed-->
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <div class="row align-items-center flex-row-reverse">
+                    <div class="col-md-12 col-sm-12 text-center">
+                        Copyright © <?php echo date('Y') ?> All rights reserved.
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <div class="modal fade" id="dinamicModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="dinamicModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <i class="fa fa-spinner fa-spin"></i> loading ...
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <script src="<?php echo base_url('assets/backend/select2/js/select2.min.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/backend/plugins/bootstrap/js/popper.min.js') ?>"></script>
+    <script src="<?php echo base_url('assets/backend/plugins/bootstrap/js/bootstrap.min.js') ?>"></script>
+    <script src="<?php echo base_url('assets/backend/js/jquery.sparkline.min.js') ?>"></script>
+    <script src="<?php echo base_url('assets/backend/js/circle-progress.min.js') ?>"></script>
+    <script src="<?php echo base_url('assets/backend/plugins/charts-c3/d3.v5.min.js') ?>"></script>
+    <script src="<?php echo base_url('assets/backend/plugins/charts-c3/c3-chart.js') ?>"></script>
+    <script src="<?php echo base_url('assets/backend/plugins/input-mask/jquery.mask.min.js') ?>"></script>
+    <script src="<?php echo base_url('assets/backend/plugins/sidebar/sidebar.js') ?>"></script>
+    <script src="<?php echo base_url('assets/backend/plugins/sidemenu/sidemenu.js') ?>"></script>
+    <script src="<?php echo base_url('assets/backend/plugins/p-scroll/perfect-scrollbar.js') ?>"></script>
+    <script src="<?php echo base_url('assets/backend/plugins/p-scroll/pscroll.js') ?>"></script>
+    <script src="<?php echo base_url('assets/backend/plugins/p-scroll/pscroll-1.js') ?>"></script>
+    <script src="<?php echo base_url('assets/backend/js/themeColors.js') ?>"></script>
+    <script src="<?php echo base_url('assets/backend/js/sticky.js') ?>"></script>
+    <script src="<?php echo base_url('assets/backend/js/custom.js') ?>"></script>
+    <script src="<?php echo base_url('assets/backend/sweetalert2/dist/sweetalert2.min.js') ?>"></script>
+    <script>
+        $(document).ready(function() {
+            $('.select2-single').select2();
+        });
+        // $("#dinamicModals").on("show.bs.modal", function(e) {
+        //     var link = $(e.relatedTarget);
+        //     $(this).find(".modal-body").load(link.attr("data-bs-href"));
+        //     $(this).find("#myModalLabel").text(link.attr("data-bs-title"));
+        // });
+        $("#dinamicModal").on("show.bs.modal", function(e) {
+            var link = $(e.relatedTarget);
+            $(this).find(".modal-body").load(link.attr("data-bs-href"));
+            $(this).find("#myModalLabel").text(link.attr("data-bs-title"));
+        });
+
+        function logout_confirm() {
+            Swal.fire({
+                title: 'Apakah Anda Yakin?',
+                text: "Anda akan keluar dari sesi dan kembali ke halaman login!",
+                type: 'warning',
+                showCancelButton: true,
+                allowOutsideClick: false,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'YA, Logout',
+                cancelButtonText: 'Batal',
+            }).then((result) => {
+                if (result.value) {
+                    location.href = '<?php echo site_url('logout') ?>';
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

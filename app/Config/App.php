@@ -16,7 +16,7 @@ class App extends BaseConfig
      *
      * E.g., http://example.com/
      */
-    public string $baseURL = 'http://localhost:8080/';
+    public string $baseURL = 'http://hmvc.local/';
 
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.
@@ -133,7 +133,7 @@ class App extends BaseConfig
      * @see https://www.php.net/manual/en/timezones.php for list of timezones
      *      supported by PHP.
      */
-    public string $appTimezone = 'UTC';
+    public string $appTimezone = 'Asia/Jakarta';
 
     /**
      * --------------------------------------------------------------------------
@@ -200,12 +200,11 @@ class App extends BaseConfig
      */
     public bool $CSPEnabled = false;
 
-        public $sessionDriver = 'CodeIgniter\Session\Handlers\FileHandler'; // Can be 'files', 'database', 'redis', etc.
-        public $sessionCookieName = 'app_';
-        public $sessionExpiration = 7200;
-        public $sessionSavePath = WRITEPATH . 'session';
-        public $sessionMatchIP = false;
-        public $sessionTimeToUpdate = 300;
-        public $sessionRegenerateDestroy = false;
-
+    public $sessionDriver = 'CodeIgniter\Session\Handlers\FileHandler'; // Can be 'files', 'database', 'redis', etc.
+    public $sessionCookieName = 'app_';
+    public $sessionExpiration = 7200;
+    public $sessionSavePath = WRITEPATH . 'session';
+    public $sessionMatchIP = false;
+    public $sessionTimeToUpdate = 300;
+    public $sessionRegenerateDestroy = false;
 }

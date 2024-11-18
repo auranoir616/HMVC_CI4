@@ -1,3 +1,11 @@
+<?= $this->extend('App\Modules\Authentication\Views\template') ?>
+
+<?= $this->section('title') ?>
+Register
+<?= $this->endSection() ?>
+<?= $this->section('content') ?>
+
+
 <div class="login-img ">
     <div class="page" style="background-image: url('<?php echo base_url('assets/bg.jpg') ?>') !important; background-size:cover">
         <div class="">
@@ -117,3 +125,4 @@
         </div>
     </div>
 </div>
+<?= $this->endSection() ?>

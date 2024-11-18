@@ -29,7 +29,7 @@ class Dashboard extends BaseController
         $viewPath = "Modules\\Dashboard\\Views\\pages\\dashboard";
         $data = [];
 
-        return $this->template->render($viewPath, $data);
+        return view($viewPath, $data);
     }
 
 public function view_page($page = 'dashboard')
@@ -53,7 +53,7 @@ public function view_page($page = 'dashboard')
         throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
     }
 
-    return $this->template->render($viewPath, $data);
+    return view($viewPath, $data);
 }
 
 }

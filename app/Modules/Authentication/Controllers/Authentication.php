@@ -33,11 +33,11 @@ class Authentication extends BaseController
             throw PageNotFoundException::forPageNotFound();
         }
     $data = [
-        'title' => ucfirst($page),
+        // 'title' => ucfirst($page),
         'islogin' => $this->ionAuth->loggedIn(),
         'greeting' => 'Hello, welcome to the home page!',
     ];
-        return $this->template->render($viewPath, $data);
+        return view($viewPath, $data);
     }
     
     public function register($page = 'signup')
@@ -58,7 +58,7 @@ class Authentication extends BaseController
             "islogin" => $this->ionAuth->loggedIn()
 
         ];
-        return $this->template->render($viewPath, $data);
+        return view($viewPath, $data);
     }
 
     public function logout()

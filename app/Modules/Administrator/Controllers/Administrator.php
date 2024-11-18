@@ -36,6 +36,6 @@ class Administrator extends Controller
             "data_group" => $this->ionAuth->getUsersGroups()->getRow(),
             "islogin" => $this->ionAuth->loggedIn(),
         ];
-      return $this->template->render($viewPath, $data);
+      return view($viewPath, $data);
           }
     }
